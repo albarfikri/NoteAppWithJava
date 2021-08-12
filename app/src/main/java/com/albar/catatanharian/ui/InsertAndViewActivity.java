@@ -148,7 +148,7 @@ public class InsertAndViewActivity extends AppCompatActivity implements View.OnC
         if (!Environment.MEDIA_MOUNTED.equals(state)) {
             return;
         }
-        String path = Environment.getExternalStorageDirectory().toString() + "/com.catatanharian";
+        String path = Environment.getExternalStorageDirectory().toString() + "/catatanharian";
         File parent = new File(path);
         if (parent.exists()) {
             File file = new File(path, edtFileName.getText().toString());
