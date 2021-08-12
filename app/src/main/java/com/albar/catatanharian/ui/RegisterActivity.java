@@ -1,5 +1,6 @@
 package com.albar.catatanharian.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,6 +59,11 @@ public class RegisterActivity extends AppCompatActivity {
         } else {
             return true;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     void simpanFileData() {
