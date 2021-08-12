@@ -37,17 +37,17 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+                if (editUsername.getText().toString().equals("") || editPassword.getText().toString().equals("")) {
+                    Toast.makeText(LoginActivity.this, "Field cannot be empty !", Toast.LENGTH_SHORT).show();
+                } else {
+                    login();
+                }
             }
         });
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        btnRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Password Tidak Sesuai", Toast.LENGTH_SHORT).show();
             }
-        } else{
+        } else {
             Toast.makeText(this, "User tidak ditemukan", Toast.LENGTH_SHORT).show();
         }
     }

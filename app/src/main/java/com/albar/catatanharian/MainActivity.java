@@ -14,12 +14,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-import androidx.appcompat.widget.Toolbar;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+
 import com.albar.catatanharian.ui.InsertAndViewActivity;
+import com.albar.catatanharian.ui.LoginActivity;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,6 +34,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE_STORAGE = 100;
+    public static final String FILENAME = "login";
     ListView listView;
 
     @Override
@@ -141,8 +146,34 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, InsertAndViewActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.action_logout:
+                tampilkanDialogKonfirmasiLogout();
+                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    void hapusFile() {
+        File file = new File(getFilesDir(), FILENAME);
+        if (file.exists()) {
+            file.delete();
+        }
+    }
+
+    void tampilkanDialogKonfirmasiLogout() {
+        new AlertDialog.Builder(this)
+                .setTitle("Log out")
+                .setMessage("Apakah anda yakin ingin Logout ?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        hapusFile();
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).setNegativeButton(android.R.string.no, null).show();
     }
 
 

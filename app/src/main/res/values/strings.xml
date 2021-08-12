@@ -9,4 +9,9 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="asal_sekolah">Asal Sekolah</string>
+    <string name="alamat">Alamat</string>
+    <string name="logout">Logout</string>
 </resources>

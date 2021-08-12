@@ -8,4 +8,10 @@
         android:icon="@drawable/ic_add"
         android:title="@string/add"
         app:showAsAction="collapseActionView|always" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout"
+        app:showAsAction="collapseActionView|always" />
 </menu>

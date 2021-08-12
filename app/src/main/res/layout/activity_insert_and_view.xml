@@ -20,25 +20,19 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="@font/avenir_regular"
-            android:text="@string/nama_file"
-            android:textColor="#000"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/editFileName"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editUsernameLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/avenir_regular"
-            android:padding="5dp"
-            android:singleLine="true"
-            android:textSize="14sp" />
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/nama_file" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/category_indicator"
             android:fontFamily="@font/avenir_regular"
             android:text="@string/simpan"
             android:textAllCaps="false"
