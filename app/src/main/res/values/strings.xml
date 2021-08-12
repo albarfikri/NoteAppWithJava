@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Catatan Harian</string>
+    <string name="title_splashscreen">Catatan Harian</string>
+    <string name="nama_file">Nama File :</string>
+    <string name="catatan">Catatan :</string>
+    <string name="simpan">Simpan</string>
+    <string name="add">tambah</string>
+</resources>
