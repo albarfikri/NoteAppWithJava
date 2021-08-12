@@ -8,8 +8,6 @@ import com.albar.catatanharian.MainActivity;
 import com.albar.catatanharian.R;
 
 public class SplashScreen extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
